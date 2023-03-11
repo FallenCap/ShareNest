@@ -24,6 +24,15 @@ const Login = () => {
     });
   };
 
+  /*error: 'idpiframe_initialization_failed', details: 'You have created a new client application that use
+  …i/web/guides/gis-migration) for more information.'} details: "You have created a new client application 
+  that uses libraries for user authentication or authorization that will soon be deprecated. New clients must
+  use the new libraries instead; existing clients must also migrate before these libraries are deprecated.
+  See the Migration Guide for more information." error: "idpiframe_initialization_failed"
+  
+  Reference soluiton: https://stackoverflow.com/questions/72192576/i-got-this-issue-when-i-am-trying-to-run-this-code-gapi-auth2-getauthinstance
+  */
+
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -36,6 +45,7 @@ const Login = () => {
   }, []);
 
   return (
+    //Html code.
     <div className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">
         <video
