@@ -38,6 +38,7 @@ const Home = () => {
       <div className="hidden md:flex h-screen flex-initital">
         <Sidebar user={user && user} />
       </div>
+      {/* Header for small device view */}
       <div className="flex md:hidden flex-row">
         <div className="p-2 w-full flex flex-row justify-between items-center shadow-md">
           <HiMenu
@@ -49,7 +50,11 @@ const Home = () => {
             <img src={logo} alt="logo.png" className="w-10" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
-            <img src={user?.image} alt="logo.png" className="w-14" />
+            <img
+              src={user?.image}
+              alt="logo.png"
+              className="w-10 rounded-full"
+            />
           </Link>
         </div>
       </div>
