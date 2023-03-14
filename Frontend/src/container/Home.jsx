@@ -34,36 +34,38 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex bg-gray-50 md:flex-row flex-col h-screen transaction-height duration-75 ease-out">
+    <div className="flex bg-gray-100 md:flex-row flex-col h-screen transaction-height duration-75 ease-out">
       <div className="hidden md:flex h-screen flex-initital">
         <Sidebar user={user && user} />
       </div>
-      {/* Header for small device view */}
+      {/* for large device view */}
       <div className="flex md:hidden flex-row">
         <div className="p-2 w-full flex flex-row justify-between items-center shadow-md">
           <HiMenu
             fontSize={40}
-            className="cursor-pointer"
+            className="cursor-pointer text-white"
             onClick={() => setToggleSidebar(true)}
           />
           <Link to="/">
-            <img src={logo} alt="logo.png" className="w-10" />
+            <img src={logo} alt="logo.png" className="w-14" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
             <img
               src={user?.image}
-              alt="logo.png"
+              alt="user.png"
               className="w-10 rounded-full"
             />
           </Link>
         </div>
       </div>
+
+      {/* For Small device view  */}
       {toggleSidebar && (
-        <div className="fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in">
+        <div className="fixed w-3/5 h-screen overflow-y-auto drop-shadow-3xl z-10 animate-slide-in">
           <div className="absolute w-full flex justify-end items-center p-2">
             <AiFillCloseCircle
               fontSize={30}
-              className="cursor-pointer"
+              className="cursor-pointer text-white"
               onClick={() => setToggleSidebar(false)}
             />
           </div>

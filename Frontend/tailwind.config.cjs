@@ -53,6 +53,9 @@ module.exports = {
         secondaryColor: '#F0F0F0',
         blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
       },
+      dropShadow: {
+        '3xl': '0 25px 25px rgba(0, 0, 0, 0.50)',
+      },
       keyframes: {
         'slide-in': {
           '0%': {

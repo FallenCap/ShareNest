@@ -11,7 +11,7 @@ const NavBar = ({ searchTerm, setSearchTerm, user }) => {
 
   return (
     <div className="flex gap-2 md:gap-4 w-full mt-5 pb-7">
-      <div className="flex justify-start items-center w-full px-2 rounded-md bg-white border-none outline-none focus-within:shadow-sm">
+      <div className="flex justify-start items-center w-full px-2 rounded-xl bg-white border-none outline-none focus-within:shadow-xl">
         <IoMdSearch fontSize={21} className="ml-1" />
         <input
           type="text"
@@ -32,9 +32,9 @@ const NavBar = ({ searchTerm, setSearchTerm, user }) => {
         </Link>
         <Link
           to="create-pin"
-          className="bg-black text-white rounded-lg w-12 h-12 flex justify-center items-center "
+          className="bg-sky-500 text-white rounded-lg w-12 h-12  flex justify-center items-center "
         >
-          <IoMdAdd />
+          <IoMdAdd fontSize={20} />
         </Link>
       </div>
     </div>
