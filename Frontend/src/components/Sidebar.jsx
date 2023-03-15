@@ -76,7 +76,7 @@ const Sidebar = ({ user, closeToggle }) => {
       {user && (
         <Link
           to={`user-profile/${user._id}`}
-          className="flex my-5 mb-3 gap-2 p-2 items-center bg-white hover:bg-sky-500 rounded-lg shadow-lg mx-3 duration-200 ease-in-out"
+          className="flex my-5 mb-3 gap-2 p-2 items-center bg-white hover:bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-lg shadow-lg mx-3"
           onClick={handleCloseSidebar}
         >
           <img src={user.image} alt="user" className="w-10 h-10 rounded-full" />

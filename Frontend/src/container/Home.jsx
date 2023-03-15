@@ -43,7 +43,7 @@ const Home = () => {
         <div className="p-2 w-full flex flex-row justify-between items-center shadow-md">
           <HiMenu
             fontSize={40}
-            className="cursor-pointer text-white"
+            className="cursor-pointer text-sky-500"
             onClick={() => setToggleSidebar(true)}
           />
           <Link to="/">

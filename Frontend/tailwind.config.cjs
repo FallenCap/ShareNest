@@ -56,6 +56,9 @@ module.exports = {
       dropShadow: {
         '3xl': '0 25px 25px rgba(0, 0, 0, 0.50)',
       },
+      transitionDuration: {
+        '2000': '2000ms',
+      },
       keyframes: {
         'slide-in': {
           '0%': {
