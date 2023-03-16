@@ -14,9 +14,9 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
 
   //1, [2, 3, 1] -> [1].length -> 1 -> !1 -> false ->!false ->true
   //4, [2, 3, 1] -> [ ].length -> 0 -> !0 -> true ->!true ->false
-  const alreadySaved = !!save?.filter(
+  const alreadySaved = !!(save?.filter(
     (item) => item.postedBy._id === user.googleId
-  )?.length;
+  ))?.length;
 
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -133,7 +133,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
 
       {/* user-profile under image */}
       <Link
-        to={`user-profile/${user?._id}`}
+        to={`user-profile/${postedBy?._id}`}
         className="flex gap-2 mt-2 items-center"
       >
         <img
