@@ -14,9 +14,9 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
 
   //1, [2, 3, 1] -> [1].length -> 1 -> !1 -> false ->!false ->true
   //4, [2, 3, 1] -> [ ].length -> 0 -> !0 -> true ->!true ->false
-  const alreadySaved = !!(save?.filter(
+  const alreadySaved = !!save?.filter(
     (item) => item.postedBy._id === user.googleId
-  ))?.length;
+  )?.length;
 
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -51,14 +51,13 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
       <div
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}
-        // onMouseLeave={() => setPostHovered(false)}
         onClick={() => navigate(`/pin-detail/${_id}`)}
         className="relative cursor-zoom-in w-auto hover:shadow-lg overflow-hidden transition-all duration-500 ease-in-out"
       >
         <img
           className="rounded-lg w-full"
           alt="user-post"
-          src={urlFor(image).width(250).url()}
+          src={urlFor(image).url()}
         />
         {postHovered && (
           <div
@@ -108,9 +107,9 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   className="bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
                 >
                   <BsFillArrowUpRightCircleFill />
-                  {destination.length > 20
-                    ? destination.slice(8, 20)
-                    : destination.slice(8)}
+                  {destination.length > 15
+                    ? `${destination.slice(0, 15)}...`
+                    : destination}
                 </a>
               )}
               {/* Delete button */}
