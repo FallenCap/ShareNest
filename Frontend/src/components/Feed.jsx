@@ -34,6 +34,13 @@ const Feed = () => {
     // If the loading is true then it returns the below component.
     return <Spinner message="We are adding new ideas to your feed!" />;
   }
+
+  if (!pins?.length) {
+    return (
+      <h2 className="flex justify-center items center">No pins available</h2>
+    );
+  }
+
   return <div>{pins && <MasonaryLayout pins={pins} />}</div>;
 };
 

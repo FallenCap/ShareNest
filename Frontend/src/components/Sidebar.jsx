@@ -3,32 +3,12 @@ import { NavLink, Link } from 'react-router-dom';
 import { RiHomeFill } from 'react-icons/ri';
 import { IoIosArrowForward } from 'react-icons/io';
 import logo from '../assets/Logo.png';
+import { categories } from '../utils/data';
 
 const isNotActiveStyle =
   'flex items-center px-5 gap-3 text-white transaction-all duration-200 ease-in-out capitalize ';
 const isActiveStyle =
-  'flex items-center px-5 gap-3 text-slate-800 font-extrabold transaction-all duration-200 ease-in-out capitalize h-14 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-xl drop-shadow-md';
-
-const categories = [
-  {
-    name: 'Animals',
-  },
-  {
-    name: 'Wallpapers',
-  },
-  {
-    name: 'Photography',
-  },
-  {
-    name: 'Gaming',
-  },
-  {
-    name: 'Coding',
-  },
-  {
-    name: 'Others',
-  },
-];
+  'flex items-center px-5 gap-3 text-slate-800 font-extrabold transaction-all duration-200 ease-in-out capitalize h-10 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-xl drop-shadow-md';
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -55,12 +35,12 @@ const Sidebar = ({ user, closeToggle }) => {
             }
             onClick={handleCloseSidebar}
           >
-            <RiHomeFill />
+            <RiHomeFill /> Home
           </NavLink>
           <h1 className="mt-2 px-5 text-white 2xl:text-xl">
             <b>Discover categories</b>
           </h1>
-          {categories.slice(0, categories.length - 1).map((category) => (
+          {categories.slice(0, categories.length).map((category) => (
             <NavLink
               to={`/category/${category.name}`}
               className={({ isActive }) =>
@@ -68,6 +48,11 @@ const Sidebar = ({ user, closeToggle }) => {
               }
               key={category.name}
             >
+              <img
+                src={category.image}
+                className="w-8 h-8 rounded-full border-2 sahdow-sm"
+                alt="category"
+              />
               {category.name}
             </NavLink>
           ))}
@@ -80,7 +65,7 @@ const Sidebar = ({ user, closeToggle }) => {
           onClick={handleCloseSidebar}
         >
           <img src={user.image} alt="user" className="w-10 h-10 rounded-full" />
-          <p>{user.userName}</p>
+          <p className="font-bold hover:text-white">{user.userName}</p>
         </Link>
       )}
     </div>
