@@ -38,7 +38,7 @@ const Sidebar = ({ user, closeToggle }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between bg-gradient-to-b from-sky-500 from-sky-700 to-sky-900 h-full overflow-y-auto min-w-210 h-scrollbar">
+    <div className="flex flex-col justify-between bg-gradient-to-b from-sky-300 from-sky-500 to-sky-700 h-full overflow-y-auto min-w-210 h-scrollbar">
       <div className="flex flex-col">
         <Link
           to="/"
