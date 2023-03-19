@@ -52,7 +52,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}
         onClick={() => navigate(`/pin-detail/${_id}`)}
-        className="relative cursor-zoom-in w-auto hover:shadow-lg overflow-hidden transition-all duration-500 ease-in-out"
+        className="relative cursor-zoom-in w-auto hover:shadow-lg overflow-hidden transition-all duration-500 ease-in-out hover:drop-shadow-2xl"
       >
         <img
           className="rounded-lg w-full"
@@ -71,7 +71,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   href={`${image?.asset?.url}?dl=`}
                   download
                   onClick={(e) => e.stopPropagation()}
-                  className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-black text-xl opacity-75 hover:opacity-100 hover:shadow-md outline-none"
+                  className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-[#2c394b] text-xl opacity-75 hover:opacity-100 hover:shadow-md outline-none"
                 >
                   <MdDownloadForOffline />
                 </a>
@@ -80,7 +80,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
               {alreadySaved ? (
                 <button
                   type="button"
-                  className="bg-yellow-400 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outlined-none"
+                  className="bg-[#ff4c29] opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outlined-none"
                 >
                   {save?.length} Saved
                 </button>
@@ -91,7 +91,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                     savePin(_id);
                   }}
                   type="button"
-                  className="bg-yellow-400 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outlined-none"
+                  className="bg-[#ff4c29] opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outlined-none"
                 >
                   Save
                 </button>
@@ -104,7 +104,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   href={destination}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
+                  className="bg-white flex items-center gap-2 text-[#2c394b] font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
                 >
                   <BsFillArrowUpRightCircleFill />
                   {destination.length > 15
@@ -120,7 +120,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                     e.stopPropagation();
                     deletePin(_id);
                   }}
-                  className="bg-yellow-400 p-2 opacity-70 hover:opacity-100 text-white font-bold px-2 py-2 text-base rounded-3xl hover:shadow-md outlined-none"
+                  className="bg-[#ff4c29] p-2 opacity-70 hover:opacity-100 text-white font-bold px-2 py-2 text-base rounded-3xl hover:shadow-md outlined-none"
                 >
                   <AiTwotoneDelete />
                 </button>
@@ -140,7 +140,9 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
           alt="user-profile"
           className="w-8 h-8 rounded-full object-cover"
         />
-        <p className="font-semibold capitalize">{postedBy?.userName}</p>
+        <p className="font-semibold text-white capitalize">
+          {postedBy?.userName}
+        </p>
       </Link>
     </div>
   );

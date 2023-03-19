@@ -91,9 +91,9 @@ const CreatePin = ({ user }) => {
         </p>
       )}
 
-      <div className="bg-white flex lg:flex-row flex-col justify-center items-center lg:p-5 p-3 lg:w-4/5 w-full">
-        <div className="bg-secondaryColor p-3 flex flex-0.7 w-full drop-shadow-md">
-          <div className="flex justify-center items-center flex-col border-2 border-dotted border-gray-300 p-3 w-full h-420">
+      <div className="flex lg:flex-row flex-col justify-center items-center lg:p-5 p-3 lg:w-4/5 w-full">
+        <div className=" p-3 flex flex-0.7 w-full drop-shadow-md">
+          <div className="flex justify-center items-center flex-col border-4 border-dotted border-[#ff4c29] p-3 w-full h-420">
             {loading && <Spinner />}
             {wrongImageType && <p>Wrong image type</p>}
             {/* image input */}
@@ -101,12 +101,12 @@ const CreatePin = ({ user }) => {
               <label>
                 <div className="flex flex-col items-center justify-center h-full">
                   <div className="flex flex-col justify-center items-center">
-                    <p className="font-bold text-2xl">
+                    <p className="font-bold text-7xl text-white">
                       <AiOutlineCloudUpload />
                     </p>
-                    <p className="text-lg">Click to upload</p>
+                    <p className="text-xl text-white">Click to upload</p>
                   </div>
-                  <p className="mt-32 text-gray-400">
+                  <p className="mt-32 text-white text-center">
                     Use high-quality JPG, SVG, PNG, GIF less than 20MB
                   </p>
                 </div>
@@ -126,7 +126,7 @@ const CreatePin = ({ user }) => {
                 />
                 <button
                   type="button"
-                  className="absolute bottom-3 right-3 p-3 rounded-full bg-white text-x1 cursor-pointer outline-none hover:shadow-md transition-all duration-500 ease-in-out"
+                  className="absolute bottom-3 right-3 p-3 rounded-full bg-white text-[#334756] text-x1 cursor-pointer outline-none hover:shadow-md transition-all duration-500 ease-in-out"
                   onClick={() => setImageAsset(null)}
                 >
                   <MdDelete />
@@ -137,32 +137,32 @@ const CreatePin = ({ user }) => {
         </div>
 
         <div className="flex flex-1 flex-col gap-6 lg:pl-5 mt-5 w-full">
+          {/* user profile image */}
+          {user && (
+            <div className="flex gap-2 my-2 items-center rounded-lg">
+              <img
+                src={user.image}
+                className="w-14 h-14 rounded-full border-4"
+                alt="user-profile"
+              />
+              <p className="font-bold text-white">{user.userName}</p>
+            </div>
+          )}
           {/* Title input */}
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Add your title here"
-            className="outline-none text-2xl sm:text-3xl font-bold border-b-2 border-gray-200 p-2"
+            className="bg-transparent border-b-2 border-[#ff4c29] text-white text-2xl sm:text-3xl font-bold p-2 outline-none"
           />
-          {/* user profile image */}
-          {user && (
-            <div className="flex gap-2 my-2 items-center bg-white rounded-lg">
-              <img
-                src={user.image}
-                className="w-10 h-10 rounded-full"
-                alt="user-profile"
-              />
-              <p className="font-bold user">{user.userName}</p>
-            </div>
-          )}
           {/* About input */}
           <input
             type="text"
             value={about}
             onChange={(e) => setAbout(e.target.value)}
             placeholder="What is your pin about"
-            className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
+            className="bg-transparent border-b-2 border-[#ff4c29] text-white text-base outline-none sm:text-lg border-b-2 border-gray-200 p-2"
           />
           {/* Destination input */}
           <input
@@ -170,12 +170,12 @@ const CreatePin = ({ user }) => {
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             placeholder="Add a destination link"
-            className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
+            className="bg-transparent border-b-2 border-[#ff4c29] text-white outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
           />
           {/* Category selection dropdown */}
           <div className="flex flex-col">
             <div>
-              <p className="mb-2 font-semibold text-lg sm:text-xl">
+              <p className="mb-2 font-semibold text-white text-lg sm:text-xl">
                 Choose Pin Category
               </p>
               <select
@@ -201,7 +201,7 @@ const CreatePin = ({ user }) => {
               <button
                 type="button"
                 onClick={savePin}
-                className="bg-yellow-300 hover:bg-yellow-500 text-white font-bold p-2 rounded-full w-28 outline-none"
+                className="bg-[#ff4c29] text-white font-bold p-2 rounded-full w-28 outline-none"
               >
                 Save pin
               </button>

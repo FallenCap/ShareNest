@@ -8,7 +8,7 @@ import { categories } from '../utils/data';
 const isNotActiveStyle =
   'flex items-center px-5 gap-3 text-white transaction-all duration-200 ease-in-out capitalize ';
 const isActiveStyle =
-  'flex items-center px-5 gap-3 text-slate-800 font-extrabold transaction-all duration-200 ease-in-out capitalize h-10 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-xl drop-shadow-md';
+  'flex items-center px-5 gap-3 text-[#334756] font-extrabold transaction-all duration-200 ease-in-out capitalize h-10 bg-[#ff4c29] rounded-xl drop-shadow-md';
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -18,7 +18,7 @@ const Sidebar = ({ user, closeToggle }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between bg-gradient-to-b from-sky-300 from-sky-500 to-sky-700 h-full overflow-y-auto min-w-210 h-scrollbar">
+    <div className="flex flex-col justify-between bg-gradient-to-b from-[#334756] to-[#2C394B] h-full overflow-y-auto min-w-210 h-scrollbar">
       <div className="flex flex-col">
         <Link
           to="/"
@@ -61,11 +61,11 @@ const Sidebar = ({ user, closeToggle }) => {
       {user && (
         <Link
           to={`user-profile/${user._id}`}
-          className="flex my-5 mb-3 gap-2 p-2 items-center bg-white hover:bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-lg shadow-lg mx-3"
+          className="flex my-5 mb-3 gap-2 p-2 items-center bg-white hover:bg-[#ff4c29] hover:text-[#334756] rounded-lg shadow-lg mx-3"
           onClick={handleCloseSidebar}
         >
-          <img src={user.image} alt="user" className="w-10 h-10 rounded-full" />
-          <p className="font-bold hover:text-white">{user.userName}</p>
+          <img src={user.image} alt="user" className="w-10 h-10 rounded-full border-2" />
+          <p className="font-bold">{user.userName}</p>
         </Link>
       )}
     </div>

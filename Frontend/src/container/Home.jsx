@@ -32,16 +32,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex bg-gray-100 md:flex-row flex-col h-screen transaction-height duration-75 ease-out">
+    <div className="flex bg-[#082032] md:flex-row flex-col h-screen transaction-height duration-75 ease-out">
       <div className="hidden md:flex h-screen flex-initital">
         <Sidebar user={user && user} />
       </div>
-      {/* for large device view */}
-      <div className="flex md:hidden flex-row">
+      {/* for Mobile device view */}
+      <div className="flex md:hidden flex-row bg-[#0d3c60]">
         <div className="p-2 w-full flex flex-row justify-between items-center shadow-md">
           <HiMenu
             fontSize={40}
-            className="cursor-pointer text-sky-500"
+            className="cursor-pointer text-[#ff4c29]"
             onClick={() => setToggleSidebar(true)}
           />
           <Link to="/">

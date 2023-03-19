@@ -37,7 +37,9 @@ const Feed = () => {
 
   if (!pins?.length) {
     return (
-      <h2 className="flex justify-center items center">No pins available</h2>
+      <h2 className="flex justify-center items center text-white">
+        No pins available
+      </h2>
     );
   }
 

@@ -15,7 +15,7 @@ const randomImage =
   'http://source.unsplash.com/1600x900/?nature,photography,technology';
 
 const activeBtnStyles =
-  'bg-yellow-300 text-white font-bold p-2 rounded-full w-20 outline-none';
+  'bg-[#ff4c29] text-white font-bold p-2 rounded-full w-20 outline-none';
 const notActiveBtnStyles =
   'bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none';
 
@@ -72,10 +72,10 @@ const UserProfile = () => {
             />
             <img
               src={user.image}
-              className="rounded-full w-20 h-20 -mt-10 shadow-xl object-cover"
+              className="rounded-full w-20 h-20 -mt-10 shadow-xl border-4 object-cover"
               alt="user-pic"
             />
-            <h1 className="font-bold text-3xl text-center mt-3">
+            <h1 className="font-bold text-3xl text-center text-white mt-3">
               {user.userName}
             </h1>
             <div className="absolute top-0 z-1 right-0 p-2">
@@ -85,7 +85,7 @@ const UserProfile = () => {
                   render={(renderProps) => (
                     <button
                       type="button"
-                      className="bg-yellow-300 hover:bg-yellow-500 p-2 rounded-full cursor-pointer outline-none shadow-md"
+                      className="bg-[#ff4c29] p-2 rounded-full cursor-pointer outline-none shadow-md"
                       onClick={renderProps.onClick}
                       disabled={renderProps.disabled}
                     >
