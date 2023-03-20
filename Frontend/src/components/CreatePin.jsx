@@ -162,7 +162,7 @@ const CreatePin = ({ user }) => {
             value={about}
             onChange={(e) => setAbout(e.target.value)}
             placeholder="What is your pin about"
-            className="bg-transparent border-b-2 border-[#ff4c29] text-white text-base outline-none sm:text-lg border-b-2 border-gray-200 p-2"
+            className="bg-transparent border-b-2 border-[#ff4c29] text-white text-base outline-none sm:text-lg border-b-2 p-2"
           />
           {/* Destination input */}
           <input
@@ -170,7 +170,7 @@ const CreatePin = ({ user }) => {
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             placeholder="Add a destination link"
-            className="bg-transparent border-b-2 border-[#ff4c29] text-white outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
+            className="bg-transparent border-b-2 border-[#ff4c29] text-white outline-none text-base sm:text-lg border-b-2 p-2"
           />
           {/* Category selection dropdown */}
           <div className="flex flex-col">
