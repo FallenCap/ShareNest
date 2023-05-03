@@ -36,7 +36,7 @@ const Home = () => {
       <div className="hidden md:flex h-screen flex-initital">
         <Sidebar user={user && user} />
       </div>
-      {/* for Mobile device view */}
+      {/* for small device view */}
       <div className="flex md:hidden flex-row bg-[#0d3c60]">
         <div className="p-2 w-full flex flex-row justify-between items-center shadow-md">
           <HiMenu
@@ -57,7 +57,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* For Small device view  */}
+      {/* For toggling sidebar  */}
       {toggleSidebar && (
         <div className="fixed w-3/5 h-screen overflow-y-auto drop-shadow-3xl z-10 animate-slide-in">
           <div className="absolute w-full flex justify-end items-center p-2">

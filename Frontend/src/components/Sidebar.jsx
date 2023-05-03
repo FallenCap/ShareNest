@@ -18,7 +18,7 @@ const Sidebar = ({ user, closeToggle }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between bg-gradient-to-b from-[#334756] to-[#2C394B] h-full overflow-y-auto min-w-210 h-scrollbar">
+    <div className="flex flex-col justify-between bg-gradient-to-b from-[#334756] from-[#2C394B] to-[#1f2835] h-full overflow-y-auto min-w-210 h-scrollbar">
       <div className="flex flex-col">
         <Link
           to="/"
@@ -64,7 +64,11 @@ const Sidebar = ({ user, closeToggle }) => {
           className="flex my-5 mb-3 gap-2 p-2 items-center bg-white hover:bg-[#ff4c29] hover:text-[#334756] rounded-lg shadow-lg mx-3"
           onClick={handleCloseSidebar}
         >
-          <img src={user.image} alt="user" className="w-10 h-10 rounded-full border-2" />
+          <img
+            src={user.image}
+            alt="user"
+            className="w-10 h-10 rounded-full border-2"
+          />
           <p className="font-bold">{user.userName}</p>
         </Link>
       )}

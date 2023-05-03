@@ -5,11 +5,6 @@ export const categories = [
       'https://i.pinimg.com/750x/eb/47/44/eb4744eaa3b3ccd89749fa3470e2b0de.jpg',
   },
   {
-    name: 'wallpaper',
-    image:
-      'https://i.pinimg.com/236x/03/48/b6/0348b65919fcbe1e4f559dc4feb0ee13.jpg',
-  },
-  {
     name: 'food',
     image:
       'https://i.pinimg.com/236x/7d/ef/15/7def15ac734837346dac01fad598fc87.jpg',
